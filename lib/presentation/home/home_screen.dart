@@ -1,3 +1,4 @@
+import 'package:codeme_task/infrastructure/auth_controller.dart';
 import 'package:codeme_task/infrastructure/product_controller.dart';
 import 'package:codeme_task/presentation/home/cart_screen.dart';
 import 'package:codeme_task/presentation/home/product_detail_screen.dart';
@@ -38,11 +39,18 @@ class _HomeScreenState extends State<HomeScreen> {
             onPressed: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
-                  builder: (context) => CartScreen(),
+                  builder: (context) => const CartScreen(),
                 ),
               );
             },
-            icon: Icon(Icons.shop),
+            icon: const Icon(Icons.shop),
+          ),
+          IconButton(
+            onPressed: () async {
+              await Provider.of<AuthController>(context, listen: false)
+                  .signOut();
+            },
+            icon: const Icon(Icons.logout),
           ),
         ],
         title: const Text('Products'),

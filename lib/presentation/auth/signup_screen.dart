@@ -103,17 +103,19 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             emailController.text.trim(),
                             passwordController.text.trim(),
                           );
-                          if (authController.user != null) {
+                          if (authController.user != null && context.mounted) {
                             Navigator.of(context).pushReplacement(
                               MaterialPageRoute(
                                   builder: (_) => const HomeScreen()),
                             );
                           } else {
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(
-                                  content: Text(authController.errorMessage ??
-                                      "Sign up failed")),
-                            );
+                            if (context.mounted) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                    content: Text(authController.errorMessage ??
+                                        "Sign up failed")),
+                              );
+                            }
                           }
                         },
                         buttonText: "SIGN UP",

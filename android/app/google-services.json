@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "668470035575",
+    "project_id": "codeme-deaff",
+    "storage_bucket": "codeme-deaff.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:668470035575:android:c54ee8a0bdf9c5a9613272",
+        "android_client_info": {
+          "package_name": "com.example.codeme_task"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7BAnMTnvEMg0AFyKqPeJw1GEqK4Q7PIA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

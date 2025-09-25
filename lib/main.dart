@@ -1,5 +1,6 @@
 import 'package:codeme_task/firebase_options.dart';
 import 'package:codeme_task/infrastructure/auth_controller.dart';
+import 'package:codeme_task/infrastructure/product_controller.dart';
 import 'package:codeme_task/presentation/auth/signup_screen.dart';
 import 'package:codeme_task/presentation/home/home_screen.dart';
 import 'package:codeme_task/theme/app_theme.dart';
@@ -23,7 +24,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => AuthController()),
+        ChangeNotifierProvider(
+          create: (_) => AuthController(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) {
+            return ProductController();
+          },
+        )
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

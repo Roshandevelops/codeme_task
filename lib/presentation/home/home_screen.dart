@@ -1,5 +1,6 @@
 import 'package:codeme_task/infrastructure/auth_controller.dart';
 import 'package:codeme_task/infrastructure/product_controller.dart';
+import 'package:codeme_task/presentation/auth/signup_screen.dart';
 import 'package:codeme_task/presentation/home/cart_screen.dart';
 import 'package:codeme_task/presentation/home/product_detail_screen.dart';
 import 'package:flutter/material.dart';
@@ -49,6 +50,16 @@ class _HomeScreenState extends State<HomeScreen> {
             onPressed: () async {
               await Provider.of<AuthController>(context, listen: false)
                   .signOut();
+              Navigator.of(context).pushAndRemoveUntil(
+                MaterialPageRoute(
+                  builder: (context) {
+                    return SignUpScreen();
+                  },
+                ),
+                (route) {
+                  return false;
+                },
+              );
             },
             icon: const Icon(Icons.logout),
           ),

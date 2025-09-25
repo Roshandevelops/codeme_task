@@ -12,11 +12,8 @@ class AppButtonWidget extends StatelessWidget {
 
   final String? buttonText;
   final void Function()? onTap;
-
   final Color? textColor;
-
   final Color backgroundColor;
-  // final double? width;
 
   @override
   Widget build(BuildContext context) {

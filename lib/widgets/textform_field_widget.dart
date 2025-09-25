@@ -31,12 +31,10 @@ class TextformFieldWidget extends StatelessWidget {
         labelStyle: TextStyle(
           color: KAppColors.labelColor,
         ),
-        // Border when the field is enabled (not focused)
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(4),
           borderSide: BorderSide.none,
         ),
-        // Border when the field is focused
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(4),
           borderSide: BorderSide.none,

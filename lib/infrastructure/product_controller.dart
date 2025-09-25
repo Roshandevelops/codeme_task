@@ -40,7 +40,7 @@ class ProductController extends ChangeNotifier {
     notifyListeners();
   }
 
-  // -------------------- CART METHODS --------------------
+  /// -------------------- CART METHODS --------------------
 
   Future<void> loadCart() async {
     final prefs = await SharedPreferences.getInstance();

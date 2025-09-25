@@ -50,16 +50,18 @@ class _HomeScreenState extends State<HomeScreen> {
             onPressed: () async {
               await Provider.of<AuthController>(context, listen: false)
                   .signOut();
-              Navigator.of(context).pushAndRemoveUntil(
-                MaterialPageRoute(
-                  builder: (context) {
-                    return SignUpScreen();
+              if (context.mounted) {
+                Navigator.of(context).pushAndRemoveUntil(
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return const SignUpScreen();
+                    },
+                  ),
+                  (route) {
+                    return false;
                   },
-                ),
-                (route) {
-                  return false;
-                },
-              );
+                );
+              }
             },
             icon: const Icon(Icons.logout),
           ),
